@@ -1,12 +1,12 @@
 package hello;
 
 public class Greeter {
-    public String sayHello(String[] args) {
+    public String sayHello(String stringToPrint) {
         String greeting;
-        if(args.length == 0) {
+        if(stringToPrint != null) {
             greeting = "Hello world!";
         } else {
-            greeting = "The first argument is: " + args[0];
+            greeting = "The argument is: " + stringToPrint;
         }
         return greeting;
     }

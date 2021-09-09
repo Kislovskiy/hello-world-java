@@ -1,6 +1,7 @@
 package hello;
 
-<<<<<<< HEAD
+import org.joda.time.LocalTime;
+
 import org.kohsuke.args4j.CmdLineException;
 import org.kohsuke.args4j.CmdLineParser;
 import org.kohsuke.args4j.Option;
@@ -18,23 +19,18 @@ public class HelloWorld {
             parser.printUsage(System.err);
             System.exit(-1);
         }
-=======
-import org.joda.time.LocalTime;
 
-public class HelloWorld {
-    public static void main(String[] args) {
         LocalTime currentTime = new LocalTime();
         System.out.println("The current local time is: " + currentTime);
->>>>>>> main
 
         Greeter greeter = new Greeter();
-        System.out.println(greeter.sayHello(args));
+        System.out.println(greeter.sayHello(args.inputString));
     }
 
     private static final class Args {
         @Option(name = "-i",
             aliases = "--input",
-            required = true,
+            required = false,
             usage = "a String to print to systemOut"
         )
         String inputString;
