@@ -10,7 +10,7 @@ To run the application:
 jar tfv build/libs/hello-world-java.jar 
 
 # to execute jar
-java -jar build/libs/hello-world-java.jar
+java -jar build/libs/hello-world-java.jar --input "Input argument"
 ```
 
 Fat `jar` produces really fat jar: from `1.8k` without dependencies to `634k` with one dependency.
