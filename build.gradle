@@ -8,11 +8,15 @@ repositories {
 
 dependencies {
     implementation 'args4j:args4j:2.33'
+    implementation 'joda-time:joda-time:2.10.10'
     testImplementation 'junit:junit:4.13.2'
 }
 
 jar {
     manifest {
         attributes 'Main-Class': 'hello.HelloWorld'
+    }
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
     }
 }
